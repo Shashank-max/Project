@@ -30,18 +30,5 @@ $sql = "INSERT INTO info (name, country_code, number, email, location)
         VALUES ('$name', '$country_code', number, '$email', '$location')";
 
 
-//     $stmt = mysqli_stmt_init($conn);
 
-//     if (! mysqli_stmt_prepare($stmt, $sql)) {
-//         die(mysqli_error($conn));
-//     }
-
-//     mysqli_stmt_bind_param($stmt, "ssiss", $name, $country_code, $number, $email, $location);
-
-//     if (mysqli_stmt_execute($stmt)) {
-//         echo "Record Saved";
-//     } 
-//     else {
-//     echo "Error: " . $sql . "<br>" . mysqli_stmt_error($stmt);
-// }
     
