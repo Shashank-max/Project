@@ -1,37 +1,5 @@
 <?php
 
-echo "<table style = 'border: solid 1px black;'";
-echo "
-        <tr>
-            <th>Name</th>
-            <th>Country Code</th>
-            <th>Mobile No.</th>
-            <th>Email</th>
-            <th>Location</th>
-        </tr> ";
-
-class TableRows extends RecursiveIteratorIterator {
-        function __construct($it) {
-        parent::__construct($it, self::LEAVES_ONLY);
-    }
-          
-        function current() {
-        return "<td style='width:150px;border:1px solid black;'>" . parent::current(). "</td>";
-    }
-          
-        function beginChildren() {
-        echo "<tr>";
-    }
-          
-        function endChildren() {
-        echo "</tr>" . "\n";
-    }
-
-}
-
-
-          
-
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -44,7 +12,6 @@ $limit = 10;
 try {
 
 
-
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -52,14 +19,39 @@ try {
     $stmt->execute();
 
     $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-    foreach (new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k => $v) {
-        echo $v;
-    }
 
 
 } catch(PDOException $e) {
     echo "Error: " . $e->getMessage();
 }
+
+$start = 0;  $per_page = 10;
+$page_counter = 0;
+$next = $page_counter + 1;
+$previous = $page_counter - 1;
+$next = $page_counter + 1;
+$previous = $page_counter - 1;
+
+if(isset($_GET['start'])){
+ $start = $_GET['start'];
+ $page_counter =  $_GET['start'];
+ $start = $start *  $per_page;
+}
+
+$q = "SELECT * FROM info LIMIT $start, $per_page";
+$query = $conn->prepare($q);
+$query->execute();
+
+if($query->rowCount() > 0){
+    $result = $query->fetchAll(PDO::FETCH_ASSOC);
+}
+
+$count_query = "SELECT * FROM info";
+$query = $conn->prepare($count_query);
+$query->execute();
+$count = $query->rowCount();
+
+$paginations = ceil($count / $per_page);
 
 
 echo "</table>";
