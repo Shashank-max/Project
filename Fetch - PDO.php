@@ -5,9 +5,6 @@ $username = "root";
 $password = "";
 $dbname = "Information";
 
-$limit = 10;
-
-
 
 try {
 
