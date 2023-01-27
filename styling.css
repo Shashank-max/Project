@@ -1,0 +1,70 @@
+.float-on-hover {
+  display: inline-block;
+  vertical-align: middle;
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  transition-duration: 0.3s;
+  transition-property: transform;
+  transition-timing-function: ease-out;
+}
+
+.float-on-hover:hover, .float-on-hover:focus, .float-on-hover:active {
+  transform: translateY(-8px);
+}
+
+.container1 {
+  background-image: url(bg2.2.jpg);
+  background-size: 1300px, 500px;
+  box-shadow: 10px 10px 10px 5px lightblue;
+}
+
+#d0 {
+  outline-style: solid;
+  outline-color: white;
+  padding-bottom: 30px;
+  padding-right: 700px;
+  width: 400px;
+  margin-top: 160px;
+}
+
+#d1 {
+  font-size: 20px;
+  color: #000000;
+  padding-top: 10px;
+  margin-left: 20px;
+}
+
+#d2 {
+  font-family: sans-serif;
+  font-size: 20px;
+  font-size: 20px;
+  color: #000000;
+}
+
+#d3 {
+  font-family: sans-serif;
+  font-size: 20px;
+  font-size: 20px;
+  color: #000000;
+}
+
+#d4 {
+  font-family: sans-serif;
+  font-size: 20px;
+  font-size: 20px;
+  color: #000000;
+}
+
+#d5 {
+  font-family: sans-serif;
+  font-size: 20px;
+  font-size: 20px;
+  color: #000000;
+}
+
+#d6 {
+  font-family: sans-serif;
+  font-size: 20px;
+  font-size: 20px;
+  color: #000000;
+}/*# sourceMappingURL=styling.css.map */
