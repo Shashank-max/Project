@@ -16,7 +16,7 @@
 
         $name = $_POST["name"];
         $country_code = $_POST["country_code"];
-        $number = filter_input(INPUT_POST, "number", FILTER_VALIDATE_INT);
+        $number = $_POST["number"];
         $email = $_POST["email"];
         $location = $_POST["location"];
 
@@ -32,6 +32,7 @@
 
         $stmt->execute();
         echo "Record Saved";
+        include('Web1.php');
     } catch (PDOException $e) {
         echo "Error:" . $e->getMessage();
     }

@@ -1,0 +1,46 @@
+$fs: 20px;
+$bgcolor: #000000;
+$pd:30px 350px;
+
+.container{
+    width: 1000px;
+    height: 600px;
+    background-image: url(bg2.2.jpg);
+    background-size: 1000px, 400px;
+    box-shadow: 10px 10px 10px 5px lightblue;
+    margin-top: 150px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.container1{
+    padding-top: 75px;
+    opacity: 100%;
+}
+table {
+    border-collapse: collapse;
+  }
+thead, th, td {
+    border: 1px solid black;
+    padding: 10px;
+}
+ul.pagination {  
+    color: black;
+    display: inline-block;  
+    padding: 0;  
+    margin: 10px; 
+}  
+ul.pagination li {display: inline;}
+ul.pagination li a {  
+    margin: 0 4px;
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 5px;  
+}
+ul.pagination li a.active {
+    background-color: grey;
+    color: white;
+    border-radius: 5px;
+}    
+ul.pagination li a:hover:not(.active) {background-color: lightgrey;}
